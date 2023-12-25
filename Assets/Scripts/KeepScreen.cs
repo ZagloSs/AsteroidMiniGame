@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeepScreen : MonoBehaviour
 {
 
-    [SerializeField] private float valorEmpuje;
+    public float valorEmpuje;
     private Camera camaraPrincipal;
 
     private void Start()
