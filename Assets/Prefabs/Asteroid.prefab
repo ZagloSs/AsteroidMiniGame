@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 5753116304588011089, guid: 9a4059f43f3772748bcca9010f41556c, type: 3}
+  aSrc: {fileID: 0}
+  clip: {fileID: 8300000, guid: dcf298414a6896043bfbf6b91679ab1e, type: 3}
