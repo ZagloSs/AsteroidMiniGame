@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Score
   - Ship
+  - SoundManager
   layers:
   - Default
   - TransparentFX
