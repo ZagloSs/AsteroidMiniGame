@@ -9,7 +9,12 @@ public class ExplodingObstacles : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+        if(collision.gameObject != GameObject.FindGameObjectWithTag("Ship"))
+        {
+            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+        }
+
+       
     }
 
 
