@@ -20,11 +20,17 @@ public class BulletProperties : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Call to another's script funciton
-        cs.changeScore();
         
-        //Destroy both collisionated and itself
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+       
+        
+        if(collision.gameObject != GameObject.FindGameObjectWithTag("Ship"))
+        {
+            //Call to another's script funcitons
+            cs.changeScore();
+
+            //Destroy both collisionated and itself
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

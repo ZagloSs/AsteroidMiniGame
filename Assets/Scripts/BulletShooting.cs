@@ -7,7 +7,11 @@ public class BulletShooting : MonoBehaviour
 
     public float bulletSpeed = 10;
     public GameObject bulletPrefab;
-    public Transform bulletSpawnPoint;
+
+    public Transform bulletSpawnPointUp;
+    public Transform bulletSpawnPointDown;
+    public Transform bulletSpawnPointRight;
+    public Transform bulletSpawnPointLeft;
 
 
 
@@ -24,9 +28,18 @@ public class BulletShooting : MonoBehaviour
 
             smng.PlayShooting();
 
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint);
+            var bulletUp = Instantiate(bulletPrefab, bulletSpawnPointUp);
+            bulletUp.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointUp.up * bulletSpeed;
 
-            bullet.GetComponent<Rigidbody2D>().velocity = bulletSpawnPoint.up * bulletSpeed;
+            var bulletRight = Instantiate(bulletPrefab,bulletSpawnPointRight);
+            bulletRight.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointRight.up * bulletSpeed;
+
+            var bulletLeft = Instantiate(bulletPrefab, bulletSpawnPointLeft);
+            bulletLeft.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointLeft.up * bulletSpeed;
+
+            var bulletDown = Instantiate(bulletPrefab, bulletSpawnPointDown);
+            bulletDown.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointDown.up * bulletSpeed;
+
         }
     }
 }

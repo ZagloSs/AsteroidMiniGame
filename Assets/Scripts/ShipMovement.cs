@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine;
 public class ShipMovement : MonoBehaviour
 {
     public float speed;
-
     private Rigidbody2D _rb;
+
 
 
     // Start is called before the first frame update
@@ -18,19 +19,12 @@ public class ShipMovement : MonoBehaviour
 
     private void Update()
     {
-        float hor = Input.GetAxisRaw("Horizontal");
-        float ver = Input.GetAxisRaw("Vertical");
+        Vector2 PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Vector2 moveForce = PlayerInput * speed;
+  
+        _rb.velocity = moveForce;
 
-        if(hor != 0 || ver != 0)
-        {
-            Vector2 velocity = new Vector2(hor, ver).normalized * speed;
 
-           _rb.velocity = velocity;
-        }
-        else
-        {
-            _rb.velocity = Vector2.zero;
-        }
 
     }
 }
