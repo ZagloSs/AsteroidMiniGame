@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class BulletProperties : MonoBehaviour
@@ -20,10 +21,10 @@ public class BulletProperties : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-       
-        
-        if(collision.gameObject != GameObject.FindGameObjectWithTag("Ship"))
+
+
+
+        if (GameObject.FindGameObjectsWithTag("Asteroid").Contains(collision.gameObject))
         {
             //Call to another's script funcitons
             cs.changeScore();
