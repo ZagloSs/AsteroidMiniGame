@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletShooting : MonoBehaviour
@@ -13,21 +14,32 @@ public class BulletShooting : MonoBehaviour
     public Transform bulletSpawnPointRight;
     public Transform bulletSpawnPointLeft;
 
+    public Cooldown cooldown;
+
+    private SoundManager smng;
 
 
+    private void Start()
+    {
+       smng = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        var smng = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (!cooldown.isCoolingDown)
         {
-            smng.PlayShooting();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                smng.PlayShooting();
 
-            var bulletUp = Instantiate(bulletPrefab, bulletSpawnPointUp);
-            bulletUp.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointUp.up * bulletSpeed;
+                var bulletUp = Instantiate(bulletPrefab, bulletSpawnPointUp);
+                bulletUp.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointUp.up * bulletSpeed;
 
+                cooldown.StartCooldown();
+            }
         }
     }
 }

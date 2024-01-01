@@ -603,6 +603,8 @@ MonoBehaviour:
   bulletSpawnPointDown: {fileID: 0}
   bulletSpawnPointRight: {fileID: 0}
   bulletSpawnPointLeft: {fileID: 0}
+  cooldown:
+    cooldownTime: 0.8
 --- !u!60 &899906962
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -632,7 +634,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
