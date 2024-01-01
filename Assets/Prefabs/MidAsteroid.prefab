@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8505796750370591517}
   - component: {fileID: 4450853612496379869}
-  - component: {fileID: 8436240889519782077}
   - component: {fileID: 2094980045624885028}
   - component: {fileID: 138625876382923775}
+  - component: {fileID: 4409527698647759627}
   m_Layer: 0
   m_Name: MidAsteroid
   m_TagString: Asteroid
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8436240889519782077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528404825189345476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa01625094d1474cb0174b36481c8a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 5753116304588011089, guid: 9a4059f43f3772748bcca9010f41556c, type: 3}
 --- !u!60 &2094980045624885028
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +116,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -198,3 +185,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4409527698647759627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7528404825189345476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa01625094d1474cb0174b36481c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 5753116304588011089, guid: 9a4059f43f3772748bcca9010f41556c, type: 3}
+  asteroidToSplitInto: {fileID: 8541742768133421927, guid: 490b2b927bbf9d548bc8f9e605613524, type: 3}
+  splitRate: 3
+  splitSpeed: 1
