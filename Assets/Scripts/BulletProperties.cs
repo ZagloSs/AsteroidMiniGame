@@ -28,10 +28,6 @@ public class BulletProperties : MonoBehaviour
         {
             //Call to another's script funcitons
             cs.changeScore();
-
-            //Destroy both collisionated and itself
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
     }
 }
