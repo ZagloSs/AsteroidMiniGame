@@ -27,7 +27,7 @@ public class AsteroidManager : MonoBehaviour
     {
         Vector3 posicionViewport = cam.WorldToViewportPoint(transform.position);
 
-        if(posicionViewport.x > 1.3 || posicionViewport.x < -0.3 || posicionViewport.y > 1.3 || posicionViewport.y < -0.3)
+        if(posicionViewport.x > 2 || posicionViewport.x < -1 || posicionViewport.y > 2 || posicionViewport.y < -1)
         {
             Destroy(gameObject);
         }

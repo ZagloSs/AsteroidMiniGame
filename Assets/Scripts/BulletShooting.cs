@@ -31,7 +31,7 @@ public class BulletShooting : MonoBehaviour
 
         if (!cooldown.isCoolingDown)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 smng.PlayShooting();
 

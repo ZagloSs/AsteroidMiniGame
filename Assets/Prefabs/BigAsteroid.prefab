@@ -184,5 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 5753116304588011089, guid: 9a4059f43f3772748bcca9010f41556c, type: 3}
   asteroidToSplitInto: {fileID: 7528404825189345476, guid: 7e6613e0e781ea24ea3c106048d7b715, type: 3}
-  splitRate: 5
-  splitSpeed: 1
+  splitRate: 2
+  splitSpeed: 1.5
