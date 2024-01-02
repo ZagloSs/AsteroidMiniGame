@@ -24,10 +24,6 @@ public class ShipMovement : MonoBehaviour
 
         _rb.AddForce(new Vector2 (moveX * speed, moveY * speed));
 
-        
-  
-        
-
 
 
     }
