@@ -19,10 +19,14 @@ public class ShipMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector2 PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        Vector2 moveForce = PlayerInput * speed;
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        _rb.AddForce(new Vector2 (moveX * speed, moveY * speed));
+
+        
   
-        _rb.velocity = moveForce;
+        
 
 
 

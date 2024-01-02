@@ -1,4 +1,5 @@
 
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,15 +15,12 @@ public class AsteroidManager : MonoBehaviour
     public int splitRate = 1;
     public float splitSpeed = 1.0f;
 
-    private ChangeScore cs;
-
     //Camera
     private Camera cam;
 
     private void Start()
     {
         cam = Camera.main;
-        cs = GameObject.FindGameObjectWithTag("Score").GetComponent<ChangeScore>();
     }
 
     private void Update()
@@ -43,12 +41,13 @@ public class AsteroidManager : MonoBehaviour
 
 
         //If not collided with ship then instantiate the particles
-        if (collision.gameObject == GameObject.FindGameObjectWithTag("Bullet"))
+        if (GameObject.FindGameObjectsWithTag("Bullet").Contains(collision.gameObject))
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
 
-            cs.changeScore();
+            //Change Score
+            ChangeScore.instance.changeScore();
 
             var smng = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
             smng.PlayAsteroid();

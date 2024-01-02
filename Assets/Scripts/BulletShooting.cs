@@ -38,6 +38,15 @@ public class BulletShooting : MonoBehaviour
                 var bulletUp = Instantiate(bulletPrefab, bulletSpawnPointUp);
                 bulletUp.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointUp.up * bulletSpeed;
 
+                var bulletDown = Instantiate(bulletPrefab, bulletSpawnPointDown);
+                bulletDown.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointDown.up * bulletSpeed;
+
+                var bulletRight = Instantiate(bulletPrefab, bulletSpawnPointRight);
+                bulletRight.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointRight.up * bulletSpeed;
+
+                var bulletLeft = Instantiate(bulletPrefab, bulletSpawnPointLeft);
+                bulletLeft.GetComponent<Rigidbody2D>().velocity = bulletSpawnPointLeft.up * bulletSpeed;
+
                 cooldown.StartCooldown();
             }
         }

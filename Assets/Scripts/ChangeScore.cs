@@ -1,24 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 
 public class ChangeScore : MonoBehaviour
 {
-    private int score = 0;
-    public TextMeshProUGUI txt;
+    public static ChangeScore instance;
 
-    private void Update()
+    private int score = 0;
+    public TextMeshProUGUI currentScore;
+    public TextMeshProUGUI highScore;
+
+
+    private void Awake()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if(instance == null)
         {
-            changeScore();
+            instance = this;
+        }
+    }
+    private void Start()
+    {
+        currentScore.text = score.ToString();
+        highScore.text = PlayerPrefs.GetInt("highscore", 0).ToString();
+    }
+
+    private void UpdateHighScore()
+    {
+        if(score > PlayerPrefs.GetInt("highscore", 0))
+        {
+            PlayerPrefs.SetInt("highscore", score);
+            highScore.text = score.ToString();
         }
     }
 
     public void changeScore()
     {
         score++;
-        txt.text = score.ToString();
+        currentScore.text = score.ToString();
+        UpdateHighScore();
     }
 }
