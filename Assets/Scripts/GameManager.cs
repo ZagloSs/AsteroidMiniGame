@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
    public static GameManager Instance;
-   public GameObject canvas;
+    public GameObject canvas;
 
     private void Awake()
     {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
+    }  
 
     public void GameOver()
     {
@@ -31,5 +32,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    
 
 }
